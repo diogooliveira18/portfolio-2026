@@ -1,0 +1,192 @@
+/* ============================================
+   ESTILO DAS PÁGINAS DE MATÉRIA - DIOGO
+   Baseado no design do portfolio-davi
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background: #ffffff;
+    color: #111;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999;
+    padding: 16px 48px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #111;
+    text-decoration: none;
+    margin-right: 40px;
+    flex-shrink: 0;
+}
+
+.nav-logo span {
+    color: #e3350d;
+}
+
+.nav-back {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.nav-back:hover {
+    background: rgba(0,0,0,0.04);
+    color: #111;
+}
+
+.nav-back::before {
+    content: "←";
+    font-size: 16px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-top: 100px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 48px 100px;
+}
+
+.page-header {
+    margin-bottom: 60px;
+}
+
+.page-header .breadcrumb {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.page-header h1 {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1.05;
+}
+
+/* CARDS GRID */
+.div-card-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 28px;
+    margin-bottom: 24px;
+}
+
+.card-atividade {
+    background: #fdfdfd;
+    border-radius: 20px;
+    padding: 22px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-atividade:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+    border-color: #e0e0e0;
+}
+
+.atividade-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #111;
+}
+
+.atividade-habilidades {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* CARD PLACEHOLDER (sem embed) */
+.card-placeholder-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    color: #bbb;
+    font-size: 13px;
+    font-style: italic;
+    border: 1.5px dashed #ddd;
+}
+
+/* CARD LARGO (Habilidades Humanas) */
+.card-largo {
+    background: #f9f9f9;
+    border: 1px solid #efefef;
+    border-radius: 14px;
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.card-largo strong {
+    color: #111;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .div-card-flex {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 20px;
+    }
+    .main-content {
+        padding: 30px 20px 60px;
+        margin-top: 80px;
+    }
+    .page-header h1 {
+        font-size: 36px;
+    }
+    .div-card-flex {
+        grid-template-columns: 1fr;
+    }
+}
