@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio 2026 - Diogo (Pokémon Edition)</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER POKÉDEX -->
+  <header class="pokedex-header">
+    <div class="header-content">
+      <div class="logo-area">
+        <img id="theme-pokemon-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pokémon" />
+      </div>
+      <div class="type-buttons-wrapper">
+        <div class="type-buttons-scroll">
+          <button class="type-icon type-normal" onclick="changeTheme('normal')" title="Normal">NRM</button>
+          <button class="type-icon type-fire" onclick="changeTheme('fire')" title="Fire">FIR</button>
+          <button class="type-icon type-water" onclick="changeTheme('water')" title="Water">WAT</button>
+          <button class="type-icon type-grass" onclick="changeTheme('grass')" title="Grass">GRS</button>
+          <button class="type-icon type-electric" onclick="changeTheme('electric')" title="Electric">ELE</button>
+          <button class="type-icon type-ice" onclick="changeTheme('ice')" title="Ice">ICE</button>
+          <button class="type-icon type-fighting" onclick="changeTheme('fighting')" title="Fighting">FIG</button>
+          <button class="type-icon type-poison" onclick="changeTheme('poison')" title="Poison">POI</button>
+          <button class="type-icon type-ground" onclick="changeTheme('ground')" title="Ground">GRD</button>
+          <button class="type-icon type-flying" onclick="changeTheme('flying')" title="Flying">FLY</button>
+          <button class="type-icon type-psychic" onclick="changeTheme('psychic')" title="Psychic">PSY</button>
+          <button class="type-icon type-bug" onclick="changeTheme('bug')" title="Bug">BUG</button>
+          <button class="type-icon type-rock" onclick="changeTheme('rock')" title="Rock">ROK</button>
+          <button class="type-icon type-ghost" onclick="changeTheme('ghost')" title="Ghost">GHO</button>
+          <button class="type-icon type-dragon" onclick="changeTheme('dragon')" title="Dragon">DRG</button>
+          <button class="type-icon type-dark" onclick="changeTheme('dark')" title="Dark">DRK</button>
+          <button class="type-icon type-steel" onclick="changeTheme('steel')" title="Steel">STL</button>
+          <button class="type-icon type-fairy" onclick="changeTheme('fairy')" title="Fairy">FAI</button>
+        </div>
+      </div>
+      <div class="header-titles">
+        <h1>Portfólio 2026</h1>
+        <div class="nav-links">
+          <a href="#" onclick="showSection('inicio')">Início</a>
+          <a href="#" onclick="showSection('trimestres')">Trimestres</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO INÍCIO (SOBRE MIM) -->
+    <section id="inicio" class="page-section active">
+      <div class="about-container dex-card">
+        <div class="about-image">
+          <!-- IMPORTANTE: Substitua o link do src abaixo pelo nome do arquivo da sua foto (exemplo: src="minha-foto.jpg") -->
+          <img src="0756E616-17AE-4CB3-9F60-20E68033FB1D.jpg" alt="Foto do Diogo" />
+        </div>
+        <div class="about-text">
+          <h1 class="pixel-text">Treinador Diogo</h1>
+          <p>
+            Olá, Sou Diogo, Nasci em Porto Alegre dia 18/08/2008, mas vim para Florianópolis com meus pais quando tinha apenas 4 anos. Sempre fui muito apaixonado pelo esporte e envolvido, gosto de jogar (futebol, vôlei, futevôlei, beach tênis e algumas lutas como taekwondo e jiu-jitsu). Com isso eu aprendi a sempre competir.
+          </p>
+          <button class="pkmn-btn mt-20" onclick="showSection('trimestres')">Ver Trimestres</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO TRIMESTRES -->
+    <section id="trimestres" class="page-section">
+      <h1 class="section-title pixel-text text-center">Trimestres</h1>
+      <div class="trimestres-list">
+        <div class="dex-card" onclick="showSection('modalidades')">
+          <h2>1° Trimestre</h2>
+          <button class="pkmn-btn">Acessar Rota</button>
+        </div>
+        <div class="dex-card" onclick="showSection('modalidades')">
+          <h2>2° Trimestre</h2>
+          <button class="pkmn-btn">Acessar Rota</button>
+        </div>
+        <div class="dex-card" onclick="showSection('modalidades')">
+          <h2>3° Trimestre</h2>
+          <button class="pkmn-btn">Acessar Rota</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO MODALIDADES -->
+    <section id="modalidades" class="page-section">
+      <h1 class="section-title pixel-text text-center">Escolha a Modalidade</h1>
+      <div class="grid-2">
+        <div class="dex-card area-card" onclick="showSection('ensino-medio')">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="Ensino Médio" />
+          <h3 class="pixel-text mt-10">Ensino Médio</h3>
+        </div>
+        <div class="dex-card area-card" onclick="showSection('tecnico')">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Técnico" />
+          <h3 class="pixel-text mt-10">Técnico</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ENSINO MÉDIO (MATÉRIAS) -->
+    <section id="ensino-medio" class="page-section">
+      <h1 class="section-title pixel-text text-center">Suas Matérias</h1>
+      <div class="grid-4">
+        <!-- Naturezas (Grass) -->
+        <div class="dex-card materia-card" onclick="location.href='natureza.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80" alt="Naturezas" />
+          </div>
+          <div class="mt-10"><span class="type-tag grass">Naturezas</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+        <!-- Matemática (Electric) -->
+        <div class="dex-card materia-card" onclick="location.href='matematica.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=300&q=80" alt="Matemática" />
+          </div>
+          <div class="mt-10"><span class="type-tag electric">Matemática</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+        <!-- Humanas (Fire) -->
+        <div class="dex-card materia-card" onclick="location.href='humanas.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=300&q=80" alt="Humanas" />
+          </div>
+          <div class="mt-10"><span class="type-tag fire">Humanas</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+        <!-- Linguagens (Water) -->
+        <div class="dex-card materia-card" onclick="location.href='linguagens.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=300&q=80" alt="Linguagens" />
+          </div>
+          <div class="mt-10"><span class="type-tag water">Linguagens</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO TÉCNICO (MATÉRIAS) -->
+    <section id="tecnico" class="page-section">
+      <h1 class="section-title pixel-text text-center">Suas Matérias (Técnico)</h1>
+      <div class="grid-4">
+        <!-- IOT -->
+        <div class="dex-card materia-card" onclick="location.href='iot.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="IOT" />
+          </div>
+          <div class="mt-10"><span class="type-tag steel">IOT</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+        <!-- Banco de Dados -->
+        <div class="dex-card materia-card" onclick="location.href='banco_de_dados.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=300&q=80" alt="Banco de Dados" />
+          </div>
+          <div class="mt-10"><span class="type-tag ground">Banco de Dados</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+        <!-- Desenvolvimento de Sistemas -->
+        <div class="dex-card materia-card" onclick="location.href='modelagem_sistemas.html'">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Dev" />
+          </div>
+          <div class="mt-10"><span class="type-tag psychic">Modelagem</span></div>
+          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

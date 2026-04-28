@@ -1,0 +1,462 @@
+:root {
+  --primary-red: #e3350d;
+  --dark-red: #cc0000;
+  --bg-color: #f6f8fc;
+  --card-bg: #ffffff;
+  --text-dark: #313131;
+  --lens-color: #17b3d6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+/* HEADER ESTILO POKEDEX */
+.pokedex-header {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+  padding: 20px 0;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-bottom: 8px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+#theme-pokemon-sprite {
+  width: 60px;
+  height: 60px;
+  margin-left: -15px;
+  margin-right: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  transition: transform 0.3s;
+}
+
+#theme-pokemon-sprite:hover {
+  transform: scale(1.1);
+}
+
+.type-buttons-wrapper {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 220px 0 15px;
+}
+
+.type-buttons-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 5px 0;
+  scrollbar-width: thin;
+}
+
+.type-buttons-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.type-buttons-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.type-buttons-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffffff 0%, #d4d4d4 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.type-buttons-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
+}
+.type-buttons-scroll::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #d4d4d4 0%, #b0b0b0 100%);
+}
+
+.type-icon {
+  border: 2px solid rgba(255,255,255,0.5);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+.type-icon:hover {
+  transform: translateY(-2px);
+  border-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Pokemon Type Colors */
+.type-normal { background-color: #A8A77A; }
+.type-fire { background-color: #EE8130; }
+.type-water { background-color: #6390F0; }
+.type-grass { background-color: #7AC74C; }
+.type-electric { background-color: #F7D02C; color: #333; text-shadow: none; }
+.type-ice { background-color: #96D9D6; color: #333; text-shadow: none; }
+.type-fighting { background-color: #C22E28; }
+.type-poison { background-color: #A33EA1; }
+.type-ground { background-color: #E2BF65; color: #333; text-shadow: none; }
+.type-flying { background-color: #A98FF3; }
+.type-psychic { background-color: #F95587; }
+.type-bug { background-color: #A6B91A; }
+.type-rock { background-color: #B6A136; }
+.type-ghost { background-color: #735797; }
+.type-dragon { background-color: #6F35FC; }
+.type-dark { background-color: #705746; }
+.type-steel { background-color: #B7B7CE; color: #333; text-shadow: none; }
+.type-fairy { background-color: #D685AD; }
+
+.header-titles {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  text-align: right;
+  z-index: 10;
+}
+
+.header-titles h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  text-shadow: 2px 2px 0px #000;
+  margin-bottom: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 800;
+  background: rgba(0,0,0,0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+.pixel-text {
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.4;
+}
+
+/* SEÇÕES GERAIS */
+.page-section {
+  display: none;
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.page-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-center { text-align: center; margin-bottom: 40px; color: #333; }
+
+/* CARDS POKEDEX */
+.dex-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  border: 4px solid #eaeaea;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.dex-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  border-color: var(--primary-red);
+}
+
+/* INÍCIO (SOBRE MIM) */
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image {
+  flex: 0 0 280px;
+}
+
+.about-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  border: 6px solid #f2f2f2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: var(--primary-red);
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* BOTÕES POKEMON */
+.pkmn-btn {
+  background: var(--primary-red);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 0 #990000;
+}
+
+.pkmn-btn:hover {
+  background: var(--dark-red);
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #990000;
+}
+
+.pkmn-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #990000;
+}
+
+.mt-20 { margin-top: 25px; }
+.mt-10 { margin-top: 15px; }
+
+/* TRIMESTRES */
+.trimestres-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.trimestres-list .dex-card {
+  cursor: pointer;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trimestres-list h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #333;
+}
+
+/* GRIDS PARA MODALIDADES E MATÉRIAS */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.area-card {
+  cursor: pointer;
+  text-align: center;
+}
+
+.area-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.area-card h3 {
+  font-size: 14px;
+  color: var(--primary-red);
+}
+
+.materia-card {
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+}
+
+.img-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #f0f0f0;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TAGS TIPO POKEMON (Matérias) */
+.type-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.grass { background-color: #78C850; }
+.electric { background-color: #F8D030; color: #333; }
+.fire { background-color: #F08030; }
+.water { background-color: #6890F0; }
+.steel { background-color: #B8B8D0; color: #333; }
+.ground { background-color: #E0C068; color: #333; }
+.psychic { background-color: #F85888; }
+
+/* ATIVIDADES (CARDS DE CANVA) */
+.card-atividade {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 3px solid #eee;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-atividade:hover {
+  border-color: var(--primary-red);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.atividade-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: var(--primary-red);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* GRID FLEX PARA ATIVIDADES */
+.div-card-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.atividade-habilidades {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* CARD LARGO (Habilidades consolidadas - Humanas) */
+.card-largo {
+  background: #fff;
+  border: 3px solid #eaeaea;
+  border-radius: 14px;
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.card-largo strong {
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+/* BREADCRUMB / INTRO PAGINA */
+.page-breadcrumb {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* PLACEHOLDER SEM EMBED */
+.card-placeholder-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  color: #bbb;
+  font-size: 13px;
+  font-style: italic;
+  border: 2px dashed #e5e5e5;
+}
+
+@media (max-width: 768px) {
+  .header-content { flex-direction: column; gap: 15px; text-align: center; }
+  .header-titles { text-align: center; position: static; margin-top: 10px; }
+  .type-buttons-wrapper { margin: 0 10px; }
+  .about-container { flex-direction: column; text-align: center; }
+  .trimestres-list .dex-card { flex-direction: column; gap: 15px; }
+  .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .div-card-flex { grid-template-columns: 1fr; }
+}
