@@ -15,8 +15,8 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    background: #ffffff;
-    color: #111;
+    background: #0f1117;
+    color: #f0f3f8;
     line-height: 1.5;
     overflow-x: hidden;
 }
@@ -28,12 +28,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(15, 17, 23, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 9999;
     padding: 16px 48px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
 }
 
@@ -41,7 +41,7 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #111;
+    color: #f0f3f8;
     text-decoration: none;
     margin-right: 40px;
     flex-shrink: 0;
@@ -111,29 +111,29 @@ body {
 }
 
 .card-atividade {
-    background: #fdfdfd;
+    background: #181b24;
     border-radius: 20px;
     padding: 22px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #282d3c;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-atividade:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
-    border-color: #e0e0e0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: #e3350d;
 }
 
 .atividade-title {
     font-size: 17px;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #111;
+    color: #f0f3f8;
 }
 
 .atividade-habilidades {
     font-size: 13px;
-    color: #888;
+    color: #9ba4b5;
     margin-top: 2px;
 }
 
@@ -143,28 +143,28 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 180px;
-    background: #f7f7f7;
+    background: #111318;
     border-radius: 12px;
     margin-bottom: 14px;
-    color: #bbb;
+    color: #6c7689;
     font-size: 13px;
     font-style: italic;
-    border: 1.5px dashed #ddd;
+    border: 1.5px dashed #2a2f3f;
 }
 
 /* CARD LARGO (Habilidades Humanas) */
 .card-largo {
-    background: #f9f9f9;
-    border: 1px solid #efefef;
+    background: #181b24;
+    border: 1px solid #282d3c;
     border-radius: 14px;
     padding: 18px 24px;
     font-size: 14px;
-    color: #555;
+    color: #9ba4b5;
     line-height: 1.7;
 }
 
 .card-largo strong {
-    color: #111;
+    color: #f0f3f8;
     font-weight: 600;
 }
 

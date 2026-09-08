@@ -69,17 +69,17 @@
     <section id="trimestres" class="page-section">
       <h1 class="section-title pixel-text text-center">Trimestres</h1>
       <div class="trimestres-list">
-        <div class="dex-card" onclick="showSection('modalidades')">
+        <div class="dex-card" onclick="selectTrimestre(1)">
           <h2>1° Trimestre</h2>
           <button class="pkmn-btn">Acessar Rota</button>
         </div>
-        <div class="dex-card" onclick="showSection('modalidades')">
+        <div class="dex-card" onclick="selectTrimestre(2)">
           <h2>2° Trimestre</h2>
           <button class="pkmn-btn">Acessar Rota</button>
         </div>
-        <div class="dex-card" onclick="showSection('modalidades')">
+        <div class="dex-card" onclick="selectTrimestre(3)">
           <h2>3° Trimestre</h2>
-          <button class="pkmn-btn">Acessar Rota</button>
+          <button class="pkmn-btn" style="opacity: 0.6;">Em Breve</button>
         </div>
       </div>
     </section>
@@ -87,6 +87,12 @@
     <!-- SEÇÃO MODALIDADES -->
     <section id="modalidades" class="page-section">
       <h1 class="section-title pixel-text text-center">Escolha a Modalidade</h1>
+      <div style="text-align: center;">
+        <div class="current-trimestre-badge">
+          <span class="pulse-dot"></span>
+          Rota: <span class="current-trimestre-text">1° Trimestre</span>
+        </div>
+      </div>
       <div class="grid-2">
         <div class="dex-card area-card" onclick="showSection('ensino-medio')">
           <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="Ensino Médio" />
@@ -102,6 +108,12 @@
     <!-- SEÇÃO ENSINO MÉDIO (MATÉRIAS) -->
     <section id="ensino-medio" class="page-section">
       <h1 class="section-title pixel-text text-center">Suas Matérias</h1>
+      <div style="text-align: center;">
+        <div class="current-trimestre-badge">
+          <span class="pulse-dot"></span>
+          Rota: <span class="current-trimestre-text">1° Trimestre</span>
+        </div>
+      </div>
       <div class="grid-4">
         <!-- Naturezas (Grass) -->
         <div class="dex-card materia-card" onclick="location.href='natureza.html'">

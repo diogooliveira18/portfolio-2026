@@ -16,10 +16,53 @@ function showSection(sectionId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Função para selecionar o trimestre a partir do início/menu
+function selectTrimestre(triNum) {
+  if (triNum === 3) {
+    alert("O 3° Trimestre ainda não começou!");
+    return;
+  }
+  localStorage.setItem('selectedTrimestre', triNum);
+  updateTrimestreLabels(triNum);
+  showSection('modalidades');
+}
+
+// Atualiza rótulos que indicam o trimestre atual na tela
+function updateTrimestreLabels(triNum) {
+  const labels = document.querySelectorAll('.current-trimestre-text');
+  labels.forEach(el => {
+    el.textContent = `${triNum}° Trimestre`;
+  });
+}
+
+// Função para alternar abas de trimestre nas páginas de matéria
+function switchTrimestreTab(triNum) {
+  // Atualiza botões
+  const tabButtons = document.querySelectorAll('.tri-tab-btn');
+  tabButtons.forEach(btn => {
+    if (btn.getAttribute('data-trimestre') == triNum) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // Atualiza painéis
+  const panels = document.querySelectorAll('.trimestre-panel');
+  panels.forEach(panel => {
+    if (panel.id === `trimestre-${triNum}`) {
+      panel.classList.add('active');
+    } else {
+      panel.classList.remove('active');
+    }
+  });
+
+  // Salva a preferência
+  localStorage.setItem('selectedTrimestre', triNum);
+}
+
 // Função para quando clicar em uma matéria
 function abrirMateria(nome) {
-  // Você pode alterar isso futuramente para abrir uma nova página
-  // Exemplo: window.location.href = "naturezas.html";
   alert("Você clicou em: " + nome + ". Aqui você pode colocar links para os seus trabalhos!");
 }
 
@@ -64,7 +107,7 @@ function changeTheme(type) {
   localStorage.setItem('portfolioTheme', type);
 }
 
-// Carrega o tema salvo ao iniciar a página
+// Carrega tema e trimestre salvo ao iniciar a página
 window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('portfolioTheme');
   if (savedTheme) {
@@ -73,4 +116,26 @@ window.addEventListener('DOMContentLoaded', () => {
     // Tema padrão inicial
     changeTheme('electric');
   }
+
+  // Detecta trimestre via query parameter, hash ou localStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  const triParam = urlParams.get('tri') || urlParams.get('trimestre');
+  let selectedTri = triParam;
+  
+  if (!selectedTri && window.location.hash) {
+    const match = window.location.hash.match(/tri-?([123])/);
+    if (match) selectedTri = match[1];
+  }
+
+  if (!selectedTri) {
+    selectedTri = localStorage.getItem('selectedTrimestre') || '1';
+  }
+
+  // Atualiza abas se existirem na página
+  if (document.querySelector('.tri-tab-btn')) {
+    switchTrimestreTab(selectedTri);
+  }
+
+  // Atualiza indicadores de trimestre
+  updateTrimestreLabels(selectedTri);
 });

@@ -1,9 +1,11 @@
 :root {
   --primary-red: #e3350d;
   --dark-red: #cc0000;
-  --bg-color: #f6f8fc;
-  --card-bg: #ffffff;
-  --text-dark: #313131;
+  --bg-color: #0f1117;
+  --card-bg: #181b24;
+  --card-border: #282d3c;
+  --text-dark: #f0f3f8;
+  --text-muted: #9ba4b5;
   --lens-color: #17b3d6;
 }
 
@@ -16,7 +18,10 @@
 
 body {
   background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 50% 0%, #1d222e 0%, #0f1117 75%);
+  background-attachment: fixed;
   color: var(--text-dark);
+  min-height: 100vh;
 }
 
 /* HEADER ESTILO POKEDEX */
@@ -24,8 +29,8 @@ body {
   background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
   padding: 20px 0;
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border-bottom: 8px solid #222;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  border-bottom: 6px solid #090a0d;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -50,12 +55,12 @@ body {
   height: 60px;
   margin-left: -15px;
   margin-right: 20px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
   transition: transform 0.3s;
 }
 
 #theme-pokemon-sprite:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .type-buttons-wrapper {
@@ -76,21 +81,21 @@ body {
   height: 10px;
 }
 .type-buttons-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: 10px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 .type-buttons-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ffffff 0%, #d4d4d4 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(180, 180, 180, 0.3) 100%);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .type-buttons-scroll::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(200, 200, 200, 0.5) 100%);
 }
 .type-buttons-scroll::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(180deg, #d4d4d4 0%, #b0b0b0 100%);
+  background: linear-gradient(180deg, rgba(180, 180, 180, 0.5) 0%, rgba(130, 130, 130, 0.4) 100%);
 }
 
 .type-icon {
@@ -102,14 +107,14 @@ body {
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
 }
 
 .type-icon:hover {
   transform: translateY(-2px);
   border-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 /* Pokemon Type Colors */
@@ -153,15 +158,18 @@ body {
   margin-left: 20px;
   font-size: 14px;
   font-weight: 800;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
   padding: 8px 15px;
   border-radius: 20px;
-  transition: background 0.3s;
+  transition: all 0.3s;
   text-transform: uppercase;
 }
 
 .nav-links a:hover {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.55);
+  border-color: rgba(255,255,255,0.45);
+  transform: translateY(-1px);
 }
 
 .pixel-text {
@@ -187,15 +195,15 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.text-center { text-align: center; margin-bottom: 40px; color: #333; }
+.text-center { text-align: center; margin-bottom: 40px; color: var(--text-dark); }
 
 /* CARDS POKEDEX */
 .dex-card {
   background-color: var(--card-bg);
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  border: 4px solid #eaeaea;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  border: 2px solid var(--card-border);
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   position: relative;
   overflow: hidden;
@@ -203,7 +211,7 @@ body {
 
 .dex-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.6), 0 0 16px rgba(255, 255, 255, 0.05);
   border-color: var(--primary-red);
 }
 
@@ -224,8 +232,8 @@ body {
   object-fit: cover;
   object-position: center top;
   border-radius: 16px;
-  border: 6px solid #f2f2f2;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 4px solid var(--card-border);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
 .about-text {
@@ -240,7 +248,7 @@ body {
 
 .about-text p {
   font-size: 18px;
-  color: #555;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -257,18 +265,18 @@ body {
   transition: all 0.2s;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 0 #990000;
+  box-shadow: 0 4px 0 var(--dark-red);
 }
 
 .pkmn-btn:hover {
   background: var(--dark-red);
   transform: translateY(2px);
-  box-shadow: 0 2px 0 #990000;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.6);
 }
 
 .pkmn-btn:active {
   transform: translateY(4px);
-  box-shadow: 0 0 0 #990000;
+  box-shadow: 0 0 0 rgba(0,0,0,0.6);
 }
 
 .mt-20 { margin-top: 25px; }
@@ -292,7 +300,7 @@ body {
 .trimestres-list h2 {
   font-size: 24px;
   font-weight: 800;
-  color: #333;
+  color: var(--text-dark);
 }
 
 /* GRIDS PARA MODALIDADES E MATÉRIAS */
@@ -319,6 +327,7 @@ body {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
+  border: 2px solid var(--card-border);
 }
 
 .area-card h3 {
@@ -338,7 +347,14 @@ body {
   margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #f0f0f0;
+  border: 4px solid var(--card-border);
+  background: #111318;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.materia-card:hover .img-wrapper {
+  border-color: var(--primary-red);
+  transform: scale(1.05);
 }
 
 .img-wrapper img {
@@ -356,7 +372,7 @@ body {
   font-weight: 800;
   color: white;
   text-transform: uppercase;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
 .grass { background-color: #78C850; }
@@ -369,20 +385,21 @@ body {
 
 /* ATIVIDADES (CARDS DE CANVA) */
 .card-atividade {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  border: 3px solid #eee;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px;
+  border: 2px solid var(--card-border);
   transition: all 0.3s;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .card-atividade:hover {
   border-color: var(--primary-red);
-  transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
 }
 
 .atividade-title {
@@ -403,22 +420,22 @@ body {
 
 .atividade-habilidades {
   font-size: 13px;
-  color: #888;
+  color: var(--text-muted);
   margin-top: 4px;
   font-weight: 600;
 }
 
 /* CARD LARGO (Habilidades consolidadas - Humanas) */
 .card-largo {
-  background: #fff;
-  border: 3px solid #eaeaea;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
   border-radius: 14px;
-  padding: 16px 24px;
+  padding: 18px 24px;
   font-size: 14px;
-  color: #555;
+  color: var(--text-muted);
   line-height: 1.8;
   margin-top: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
 }
 
 .card-largo strong {
@@ -430,8 +447,8 @@ body {
 .page-breadcrumb {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #aaa;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -442,13 +459,13 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 180px;
-  background: #f7f7f7;
+  background: #111318;
   border-radius: 10px;
   margin-bottom: 14px;
-  color: #bbb;
+  color: #6c7689;
   font-size: 13px;
   font-style: italic;
-  border: 2px dashed #e5e5e5;
+  border: 2px dashed #2a2f3f;
 }
 
 @media (max-width: 768px) {
