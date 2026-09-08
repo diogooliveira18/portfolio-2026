@@ -612,6 +612,26 @@ body {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(227, 53, 13, 0); }
 }
 
+/* PAINÉIS DE TRIMESTRE */
+.trimestre-panel {
+  display: none;
+}
+
+.trimestre-panel.active {
+  display: block;
+}
+
+.tri-tab-btn {
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.tri-tab-btn.active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px var(--primary-red);
+}
+
 @media (max-width: 768px) {
   .header-content { flex-direction: column; gap: 15px; text-align: center; }
   .header-titles { text-align: center; position: static; margin-top: 10px; }

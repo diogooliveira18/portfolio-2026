@@ -153,30 +153,54 @@
     <!-- SEÇÃO TÉCNICO (MATÉRIAS) -->
     <section id="tecnico" class="page-section">
       <h1 class="section-title pixel-text text-center">Suas Matérias (Técnico)</h1>
-      <div class="grid-4">
-        <!-- IOT -->
-        <div class="dex-card materia-card" onclick="location.href='iot.html'">
-          <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="IOT" />
+
+      <!-- Abas de Trimestre -->
+      <div class="tri-tabs" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+        <button class="pkmn-btn tri-tab-btn" data-trimestre="1" onclick="switchTrimestreTab(1)" style="font-size: 10px; padding: 8px 20px;">1° Trimestre</button>
+        <button class="pkmn-btn tri-tab-btn" data-trimestre="2" onclick="switchTrimestreTab(2)" style="font-size: 10px; padding: 8px 20px;">2° Trimestre</button>
+      </div>
+
+      <!-- Painel 1° Trimestre -->
+      <div id="trimestre-1" class="trimestre-panel">
+        <div class="grid-4">
+          <!-- IOT -->
+          <div class="dex-card materia-card" onclick="location.href='iot.html'">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="IOT" />
+            </div>
+            <div class="mt-10"><span class="type-tag steel">IOT</span></div>
+            <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
           </div>
-          <div class="mt-10"><span class="type-tag steel">IOT</span></div>
-          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+          <!-- Banco de Dados -->
+          <div class="dex-card materia-card" onclick="location.href='banco_de_dados.html'">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=300&q=80" alt="Banco de Dados" />
+            </div>
+            <div class="mt-10"><span class="type-tag ground">Banco de Dados</span></div>
+            <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+          </div>
+          <!-- Modelagem de Sistemas -->
+          <div class="dex-card materia-card" onclick="location.href='modelagem_sistemas.html'">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Modelagem" />
+            </div>
+            <div class="mt-10"><span class="type-tag psychic">Modelagem</span></div>
+            <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
+          </div>
         </div>
-        <!-- Banco de Dados -->
-        <div class="dex-card materia-card" onclick="location.href='banco_de_dados.html'">
-          <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=300&q=80" alt="Banco de Dados" />
+      </div>
+
+      <!-- Painel 2° Trimestre -->
+      <div id="trimestre-2" class="trimestre-panel">
+        <div class="grid-4">
+          <!-- Desenvolvimento de Sistema e Programação de Aplicativos -->
+          <div class="dex-card materia-card" onclick="location.href='dev_sistemas.html'">
+            <div class="img-wrapper">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Dev Sistemas" />
+            </div>
+            <div class="mt-10"><span class="type-tag dragon">Dev. Sistemas</span></div>
+            <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
           </div>
-          <div class="mt-10"><span class="type-tag ground">Banco de Dados</span></div>
-          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
-        </div>
-        <!-- Desenvolvimento de Sistemas -->
-        <div class="dex-card materia-card" onclick="location.href='modelagem_sistemas.html'">
-          <div class="img-wrapper">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Dev" />
-          </div>
-          <div class="mt-10"><span class="type-tag psychic">Modelagem</span></div>
-          <button class="pkmn-btn mt-10" style="font-size: 10px; padding: 8px 15px;">Ver Projetos</button>
         </div>
       </div>
     </section>
