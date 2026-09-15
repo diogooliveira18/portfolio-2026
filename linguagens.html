@@ -52,33 +52,76 @@
       <p class="page-breadcrumb">Ensino Médio</p>
       <h1 class="section-title pixel-text text-center">Linguagens</h1>
 
-      <div class="div-card-flex">
-
-        <!-- Atividade 1: A Paixão de G.H (Prezi) -->
-        <div class="card-atividade">
-          <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
-            <iframe src="https://prezi.com/p/embed/WyBWEv51o7Ne7dY4jYGp/"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-              frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen">
-            </iframe>
-          </div>
-          <h3 class="atividade-title">A Paixão de G.H</h3>
-          <p class="atividade-habilidades">Língua Portuguesa e Literatura</p>
+      <!-- SELETOR DE TRIMESTRES -->
+      <div class="trimestre-selector-wrapper">
+        <div class="trimestre-tabs">
+          <button class="tri-tab-btn active" data-trimestre="1" onclick="switchTrimestreTab(1)">1° Trimestre</button>
+          <button class="tri-tab-btn" data-trimestre="2" onclick="switchTrimestreTab(2)">2° Trimestre</button>
+          <button class="tri-tab-btn" data-trimestre="3" disabled title="Em breve">3° Trimestre</button>
         </div>
+      </div>
 
-        <!-- Atividade 2: Game Literário (Wordwall) -->
-        <div class="card-atividade">
-          <div style="position: relative; width: 100%; height: 0; padding-top: 76%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
-            <iframe
-              src="https://wordwall.net/pt/embed/b580bd06ac784914b9e02abc6f5c4dc8?themeId=1&templateId=3&fontStackId=0"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-              frameborder="0" allowfullscreen>
-            </iframe>
+      <!-- CONTEÚDO: 1° TRIMESTRE -->
+      <div id="trimestre-1" class="trimestre-panel active">
+        <div class="div-card-flex">
+
+          <!-- Atividade 1: A Paixão de G.H (Prezi) -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://prezi.com/p/embed/WyBWEv51o7Ne7dY4jYGp/"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen">
+              </iframe>
+            </div>
+            <h3 class="atividade-title">A Paixão de G.H</h3>
+            <p class="atividade-habilidades">Língua Portuguesa e Literatura</p>
           </div>
-          <h3 class="atividade-title">Game Literário</h3>
-          <p class="atividade-habilidades">H15</p>
-        </div>
 
+          <!-- Atividade 2: Game Literário (Wordwall) -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 76%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
+              <iframe
+                src="https://wordwall.net/pt/embed/b580bd06ac784914b9e02abc6f5c4dc8?themeId=1&templateId=3&fontStackId=0"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                frameborder="0" allowfullscreen>
+              </iframe>
+            </div>
+            <h3 class="atividade-title">Game Literário</h3>
+            <p class="atividade-habilidades">H15</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONTEÚDO: 2° TRIMESTRE -->
+      <div id="trimestre-2" class="trimestre-panel">
+        <div class="div-card-flex">
+
+          <!-- Atividade 1: Canva 2° Trimestre -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px; will-change: transform;">
+              <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                src="https://www.canva.com/design/DAHSo6F2qgU/vpJ91NKGhKUL4vOCluOngg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+              </iframe>
+            </div>
+            <h3 class="atividade-title">Atividade — 2° Trimestre</h3>
+            <a href="https://canva.link/kt5qn0ppamdh0qr" target="_blank" class="canva-link-btn">🔗 Abrir no Canva</a>
+          </div>
+
+          <!-- Atividade 2: Nota da Redação -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 75%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px; background: #111827; display: flex; align-items: center; justify-content: center;">
+              <img
+                src="nota_redacao.png"
+                alt="Nota da Redação — 520/1000"
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px;"
+              />
+            </div>
+            <h3 class="atividade-title">Redação — Nota 520/1000</h3>
+            <p class="atividade-habilidades">Língua Portuguesa</p>
+          </div>
+
+        </div>
       </div>
 
     </section>

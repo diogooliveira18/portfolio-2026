@@ -52,28 +52,58 @@
       <p class="page-breadcrumb">Ensino Médio</p>
       <h1 class="section-title pixel-text text-center">Matemática</h1>
 
-      <div class="div-card-flex">
-
-        <!-- Atividade 1: Filme Quebrando a Banca (sem embed) -->
-        <div class="card-atividade">
-          <div class="card-placeholder-inner">Embed não disponível</div>
-          <h3 class="atividade-title">Filme: Quebrando a Banca</h3>
-          <p class="atividade-habilidades">C5: H30 H31</p>
+      <!-- SELETOR DE TRIMESTRES -->
+      <div class="trimestre-selector-wrapper">
+        <div class="trimestre-tabs">
+          <button class="tri-tab-btn active" data-trimestre="1" onclick="switchTrimestreTab(1)">1° Trimestre</button>
+          <button class="tri-tab-btn" data-trimestre="2" onclick="switchTrimestreTab(2)">2° Trimestre</button>
+          <button class="tri-tab-btn" data-trimestre="3" disabled title="Em breve">3° Trimestre</button>
         </div>
+      </div>
 
-        <!-- Atividade 2: AV1 - Jogo Quebrando a Banca (Genially) -->
-        <div class="card-atividade">
-          <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
-            <iframe title="Quebrando a banca" frameborder="0"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-              src="https://view.genially.com/69d78772a66173e8e63f0fb2"
-              allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
-            </iframe>
+      <!-- CONTEÚDO: 1° TRIMESTRE -->
+      <div id="trimestre-1" class="trimestre-panel active">
+        <div class="div-card-flex">
+
+          <!-- Atividade 1: Filme Quebrando a Banca (sem embed) -->
+          <div class="card-atividade">
+            <div class="card-placeholder-inner">Embed não disponível</div>
+            <h3 class="atividade-title">Filme: Quebrando a Banca</h3>
+            <p class="atividade-habilidades">C5: H30 H31</p>
           </div>
-          <h3 class="atividade-title">AV1 — Jogo: Quebrando a Banca</h3>
-          <p class="atividade-habilidades">C5: H30 H31</p>
-        </div>
 
+          <!-- Atividade 2: AV1 - Jogo Quebrando a Banca (Genially) -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px;">
+              <iframe title="Quebrando a banca" frameborder="0"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                src="https://view.genially.com/69d78772a66173e8e63f0fb2"
+                allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
+              </iframe>
+            </div>
+            <h3 class="atividade-title">AV1 — Jogo: Quebrando a Banca</h3>
+            <p class="atividade-habilidades">C5: H30 H31</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONTEÚDO: 2° TRIMESTRE -->
+      <div id="trimestre-2" class="trimestre-panel">
+        <div class="div-card-flex">
+
+          <!-- Atividade 1: Canva 2° Trimestre -->
+          <div class="card-atividade">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 14px; overflow: hidden; border-radius: 10px; will-change: transform;">
+              <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                src="https://www.canva.com/design/DAHMvd-uWlU/4_dKDDpaYHG70tmn9VtsBQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+              </iframe>
+            </div>
+            <h3 class="atividade-title">Atividade — 2° Trimestre</h3>
+            <a href="https://canva.link/7ezwnaaz0vxnem1" target="_blank" class="canva-link-btn">🔗 Abrir no Canva</a>
+          </div>
+
+        </div>
       </div>
 
     </section>
